@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy — Bottle Shoot Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #050807;
+            color: #a8b8ae;
+            line-height: 1.75;
+            min-height: 100vh;
+            padding: 0;
+        }
+
+        .hud-bar {
+            height: 4px;
+            background: linear-gradient(90deg, #00994d, #00ff88, #ffc800);
+        }
+
+        .page {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 36px 22px 64px;
+        }
+
+        .doc-header {
+            border: 1px solid rgba(0, 255, 136, 0.3);
+            background: linear-gradient(180deg, rgba(12, 22, 16, 0.98) 0%, rgba(6, 10, 8, 0.99) 100%);
+            padding: 28px 24px 24px;
+            margin-bottom: 32px;
+            position: relative;
+        }
+
+        .doc-header::after {
+            content: "PRIVACY";
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2rem;
+            letter-spacing: 0.2em;
+            color: rgba(0, 255, 136, 0.12);
+            pointer-events: none;
+        }
+
+        .doc-header h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 2.1rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            color: #f0fff4;
+            margin-bottom: 6px;
+        }
+
+        .doc-header .app {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #ffc800;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        .doc-header .meta {
+            margin-top: 16px;
+            font-size: 0.8rem;
+            color: #5a7266;
+            font-weight: 600;
+            border-top: 1px solid rgba(0, 255, 136, 0.12);
+            padding-top: 14px;
+        }
+
+        section {
+            margin-bottom: 28px;
+            padding-left: 14px;
+            border-left: 3px solid rgba(255, 196, 0, 0.45);
+        }
+
+        section h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.35rem;
+            letter-spacing: 0.06em;
+            color: #00ff88;
+            margin-bottom: 12px;
+            margin-left: -14px;
+            padding-left: 14px;
+        }
+
+        section p {
+            font-size: 0.96rem;
+            margin-bottom: 10px;
+        }
+
+        section p:last-child {
+            margin-bottom: 0;
+        }
+
+        section strong {
+            color: #e8f0ea;
+            font-weight: 700;
+        }
+
+        .status-block {
+            background: rgba(0, 255, 136, 0.06);
+            border: 1px solid rgba(0, 255, 136, 0.28);
+            padding: 18px 20px;
+            margin: 16px 0 0;
+            font-size: 0.95rem;
+        }
+
+        .status-block .label {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+            color: #7dffc4;
+            margin-bottom: 8px;
+        }
+
+        ol.steps {
+            counter-reset: step;
+            list-style: none;
+            margin-top: 14px;
+        }
+
+        ol.steps li {
+            counter-increment: step;
+            position: relative;
+            padding-left: 36px;
+            margin-bottom: 14px;
+            font-size: 0.96rem;
+        }
+
+        ol.steps li::before {
+            content: counter(step, decimal-leading-zero);
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.1rem;
+            color: #ffc800;
+            letter-spacing: 0.05em;
+        }
+
+        .back {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .back a {
+            display: inline-block;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.05rem;
+            letter-spacing: 0.12em;
+            color: #00ff88;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 1px solid rgba(0, 255, 136, 0.4);
+            background: rgba(0, 255, 136, 0.06);
+            transition: background 0.15s ease, color 0.15s ease;
+        }
+
+        .back a:hover {
+            background: rgba(0, 255, 136, 0.12);
+            color: #b8ffd9;
+        }
+
+        @media (max-width: 640px) {
+            .page { padding: 28px 16px 48px; }
+            .doc-header h1 { font-size: 1.75rem; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hud-bar" aria-hidden="true"></div>
+
+    <div class="page">
+        <header class="doc-header">
+            <h1>Privacy summary</h1>
+            <p class="app">Bottle Shoot Challenge</p>
+            <p class="meta">Last updated: April 2026 · Applies to the iOS app distributed on the App Store</p>
+        </header>
+
+        <section>
+            <h2>Scope</h2>
+            <p>This document summarizes how <strong>Bottle Shoot Challenge</strong> treats information when you play on an iPhone or compatible Apple device. Apple operates the store, payments, and much of the platform; their policies also apply alongside this summary.</p>
+        </section>
+
+        <section>
+            <h2>Data collection</h2>
+            <p>According to the app’s <strong>App Store privacy labels</strong>, the developer has indicated that <strong>this app does not collect data</strong> for the categories Apple lists under App Privacy. If a future update changes that, the store listing should reflect it—check the App Store page for the current disclosure.</p>
+            <div class="status-block" role="note">
+                <div class="label">App Store disclosure</div>
+                <p>“Data Not Collected” means the developer states they do not gather the types of data described in Apple’s nutrition-style privacy section for this title. Practices can still vary with iOS version, system features, or store rules.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Apple and your device</h2>
+            <p>Installing or updating through the <strong>App Store</strong>, using <strong>Game Center</strong>, or signing in with an Apple ID involves processing by <strong>Apple</strong> under Apple’s agreements and privacy policy. The game does not replace or override those terms.</p>
+        </section>
+
+        <section>
+            <h2>On-device play</h2>
+            <p>Like many single-player games, <strong>Bottle Shoot Challenge</strong> may keep ordinary data on your device—such as progress or settings—so levels and preferences work offline. Unless a feature explicitly syncs to a server (and the store listing says so), that information typically stays on the device you use.</p>
+        </section>
+
+        <section>
+            <h2>Age rating</h2>
+            <p>The title is rated <strong>13+</strong> on the App Store. Parents and guardians can use Apple’s <strong>Screen Time</strong> and family controls to manage downloads and purchases.</p>
+        </section>
+
+        <section>
+            <h2>Updates to this text</h2>
+            <p>This page may be edited for clarity or to stay aligned with the live store listing. The <strong>“Last updated”</strong> line above changes when the wording here is revised. The authoritative technical detail for collection practices remains whatever Apple shows for the app on the App Store at the time you check.</p>
+        </section>
+
+        <section>
+            <h2>If you have concerns</h2>
+            <p>For questions specific to how the app handles data, use the <strong>support or report options</strong> on the app’s App Store product page. For account, billing, or device privacy, contact <strong>Apple Support</strong> or review Apple’s privacy materials.</p>
+        </section>
+
+        <nav class="back">
+            <a href="index.html">← Game overview</a>
+        </nav>
+    </div>
+</body>
+
+</html>
